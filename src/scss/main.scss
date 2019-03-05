@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans');
+@import '_variables.scss';
+@import '_components.scss';
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    height: 100vh;
+
+    #app {
+        font-family: 'Nano Sans', sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        height: inherit;
+        overflow: hidden;
+
+        .slider {
+            width: 200vw;
+            display: flex;
+            height: inherit;
+            transition: transform .2s ease;
+            
+            &.slide-0 {
+                transform: translate3d(0,0,0);
+            }
+            &.slide-1 {
+                transform: translate3d(-100vw,0,0);
+            }
+        /* * * * * * * * * * * * * * * * * * */
+            main {
+                flex: 1;
+
+                header {
+                    justify-content: center;
+                    display: grid;
+                    margin: 0;
+                    padding: 0;
+                    flex: 2;
+
+                    h1 {
+                        display: flex;
+                        justify-content: center;
+                        font-size: 3rem;
+                        margin: 0;
+                        padding: 2rem 0 0 0;
+                    }
+                    p {
+                        display: flex;
+                        justify-content: center;
+                    
+                    }  
+                }
+                footer {
+                    display: flex;
+                    flex: 2;
+                    flex-direction: column;
+                    justify-content: flex-end;
+                    
+                    a.btn {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        background: #222;
+                        color: white;
+                        font-weight: 700;
+                        height: 3rem;
+                        border-radius: 99rem;
+                    }
+                }
+
+                /* Style within AddTodo.Vue*/
+                &#addTodo {
+                    display: flex;
+                    flex-direction: column;
+
+                    .content {
+                        flex: 8;
+                         
+                        input {
+                            font-size: 1.4rem;
+                            font-weight: 700;
+                            border: none;
+                            appearance: none;
+                            background: none;
+                            text-align: center;
+                            padding: .25rem;
+                            
+                            &:focus {
+                                outline: none;
+                            }
+                        }
+                    }   
+                }
+
+                /* Style within Todo.vue */
+                &#todo {
+                    display: flex;
+                    flex-direction: column;
+
+
+                    .todo-content {
+                        flex: 8;
+                        
+                    }
+                }
+            } 
+
+            /* Style inside of Todo_item */
+            article {
+
+                &.todos {
+                    border-radius: 999rem;
+                    display: flex;
+                    background: rgba(0, 0, 0, 0.06); 
+                    margin: 0 0 1rem;
+                    height: 3rem;
+                    
+                    &.completed {
+                        .text {
+                            color: rgba(#000000, $alpha: .5);
+                            text-decoration: line-through;
+                        }
+                    }
+
+                    .done {
+                        background: rgb(56, 180, 128);
+                        width: 3rem;
+                        height: 3rem;
+                        display: flex;
+                        justify-content: center;
+                        align-content: center;
+                        border-radius: 50%;
+                    }         
+                    .text {
+                        display: flex;
+                        flex: 1;
+                        align-items: center;
+                        padding: 0 0 0 1rem;
+                        
+                    }
+                } 
+            } 
+        } 
+    }
+}
